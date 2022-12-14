@@ -1,0 +1,27 @@
+settings:
+  title: 'Status Page for CL'
+  url: 'https://status-page.eidam.dev' # used for Slack & Discord messages
+  logo: logo-192x192.png # image in ./public/ folder
+  daysInHistogram: 90 # number of days you want to display in histogram
+  collectResponseTimes: false # experimental feature, enable only for <5 monitors or on paid plans
+
+  # configurable texts across the status page
+  allmonitorsOperational: 'All Systems Operational'
+  notAllmonitorsOperational: 'Not All Systems Operational'
+  monitorLabelOperational: 'Operational'
+  monitorLabelNotOperational: 'Not Operational'
+  monitorLabelNoData: 'No data'
+  dayInHistogramNoData: 'No data'
+  dayInHistogramOperational: 'All good'
+  dayInHistogramNotOperational: 'Some checks failed'
+
+# list of monitors
+monitors:
+  - id: workers-cloudflare-com # unique identifier
+    name: www.liruizhe.cn
+    description: 'You write code. They handle the rest.' # default=empty
+    url: 'https://www.liruizhe.cn/' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: false # should fetch follow redirects, default=false
+    linkable: false # should the titles be links to the service, default=true
